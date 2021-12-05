@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import Picker from 'react-native-picker-select';
 import Header from './Header';
 import logo from './Assets/user_group_new.png';
+import axios from 'axios';
 
 function Form() {
-    const ufs = [
-        { label: 'RS', value: '1' },
-        { label: 'SC', value: '2' },
-        { label: 'PR', value: '3' },//coloque os outros estados aqui...
-    ];
+
+    const [ufs, setEstados] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://192.168.0.108:3030/estados')
+            .then(response => {
+                setEstados(response.data.map(estado => ({ label: estado.uf, key: estado.uf, value: estado.uf })));
+            });
+    }, []);
 
     const placeholder = { label: 'Selecione o estado', value: null, color: 'black' };
+
+    const [nome, setNome] = useState('');
+    const [idade, setIdade] = useState(0);
+    const [estado, setEstado] = useState('');
+
+    function handleNameChange(name) { setNome(name); }
+    function handleAgeChange(idade) { setIdade(parseInt(idade)); }
+    function handleStateChange(state) { setEstado(state); }
+
+    function handleButtonPress() {
+        axios.post('http://192.168.0.108:3031/cadastro', { nome, idade, estado })
+            .then(response => {
+                alert(response.data.dados.length + ' cadastros!');
+            })
+    }
 
     return (
         <>
@@ -21,10 +41,10 @@ function Form() {
                 <Text style={styles.title}>Preencha o formulário abaixo:</Text>
             </View>
             <View style={styles.inputContainer}>
-                <TextInput style={styles.input} placeholder="Digite o nome" />
-                <TextInput style={styles.input} placeholder="Digite a idade" keyboardType={'numeric'} />
-                <Picker placeholder={placeholder} onValueChange={() => {}} style={pickerSelectStyles} items={ufs} />
-                <TouchableOpacity style={styles.button}>
+                <TextInput style={styles.input} placeholder="Digite o nome" onChangeText={handleNameChange} />
+                <TextInput style={styles.input} placeholder="Digite a idade" keyboardType={'numeric'} onChangeText={handleAgeChange} />
+                <Picker placeholder={placeholder} onValueChange={handleStateChange} style={pickerSelectStyles} items={ufs} />
+                <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
                     <Text style={styles.buttonText}>Salvar</Text>
                 </TouchableOpacity>
             </View>

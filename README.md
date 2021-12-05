@@ -11,3 +11,10 @@ How to execute:
 
 Tutorial completo em https://www.luiztools.com.br/post/introducao-ao-react-native/
 
+## backend
+Example backend APIs for reactnative01.
+
+1. cd backend
+2. npm i
+3. node api-estados or node api-cadastro
+4. Test at http://localhost:3030/estados or http://localhost:3031/cadastro
