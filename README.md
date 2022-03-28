@@ -28,3 +28,13 @@ How to execute:
 4. scan the QRCode with your phone
 
 Tutorial completo em https://www.luiztools.com.br/post/tutorial-crud-em-app-android-e-ios-com-react-native/
+
+## cryptowatch
+
+How to execute:
+1. cd cryptowatch
+2. npm i
+3. npm start
+4. scan the QRCode with your phone
+
+Tutorial completo em https://www.luiztools.com.br/post/tutorial-app-de-criptomoedas-com-react-native/
