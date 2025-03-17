@@ -1,40 +1,16 @@
 # react-native-tutorials
-Simple app examples in React Native with Expo
+Simple app examples in React Native with Expo.
 
-## reactnative01
-How to execute:
+See each README for more info.
 
-1. cd reactnative01
-2. npm i
-3. npm start
-4. scan the QRCode with your phone
+## More
 
-Tutorial completo em https://www.luiztools.com.br/post/introducao-ao-react-native/
+Follow me at https://about.me/luiztools
 
-## backend
-Example backend APIs for reactnative01.
+My books at https://www.luiztools.com.br/meus-livros
 
-1. cd backend
-2. npm i
-3. node api-estados or node api-cadastro
-4. Test at http://localhost:3030/estados or http://localhost:3031/cadastro
+My courses at https://www.luiztools.com.br/meus-cursos
 
-## crud
 
-How to execute:
-1. cd reactnative01
-2. npm i
-3. npm start
-4. scan the QRCode with your phone
 
-Tutorial completo em https://www.luiztools.com.br/post/tutorial-crud-em-app-android-e-ios-com-react-native/
 
-## cryptowatch
-
-How to execute:
-1. cd cryptowatch
-2. npm i
-3. npm start
-4. scan the QRCode with your phone
-
-Tutorial completo em https://www.luiztools.com.br/post/tutorial-app-de-criptomoedas-com-react-native/
