@@ -10,22 +10,22 @@ export default function App() {
   const [symbol, setSymbol] = useState('btcusdt')
   const [data, setData] = useState({});
 
-  const { lastJsonMessage } = useWebSocket(`wss://stream.binance.com:9443/ws/${symbol}@ticker`, {
+  useWebSocket(`wss://stream.binance.com:9443/ws/${symbol}@ticker`, {
     onOpen: () => { },
-    onMessage: () => {
-      if (lastJsonMessage) {
-        setData({
-          priceChange: parseFloat(lastJsonMessage.p),
-          priceChangePercent: parseFloat(lastJsonMessage.P),
-          open: lastJsonMessage.o,
-          close: lastJsonMessage.c,
-          high: lastJsonMessage.h,
-          low: lastJsonMessage.l,
-          numberOfTrades: lastJsonMessage.n,
-          quoteVolume: lastJsonMessage.q,
-          baseVolume: lastJsonMessage.v
-        });
-      }
+    onMessage: (message) => {
+      if (!message) return;
+      const data = JSON.parse(message.data);
+      setData({
+        priceChange: parseFloat(data.p),
+        priceChangePercent: parseFloat(data.P),
+        open: data.o,
+        close: data.c,
+        high: data.h,
+        low: data.l,
+        numberOfTrades: data.n,
+        quoteVolume: data.q,
+        baseVolume: data.v
+      });
     },
     onError: (event) => console.error(event),
     shouldReconnect: (closeEvent) => true,
