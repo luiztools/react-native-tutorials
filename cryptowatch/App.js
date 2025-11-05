@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import useWebSocket from 'react-use-websocket';
-import { Input, Text } from 'react-native-elements';
+import useWebSocket from './useWebSocket';
+import { Input, Text } from '@rn-vui/themed';
 import { Feather as Icon } from '@expo/vector-icons';
 
 export default function App() {

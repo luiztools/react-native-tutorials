@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import Database from './Database';

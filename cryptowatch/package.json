@@ -10,14 +10,12 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "~44.0.0",
-    "expo-status-bar": "~1.2.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-native": "0.64.3",
-    "react-native-elements": "^3.4.2",
-    "react-native-web": "0.17.1",
-    "react-use-websocket": "^3.0.0"
+    "expo": "~54.0.22",
+    "expo-status-bar": "~3.0.8",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "@rn-vui/base": "^5.1.10",
+    "@rn-vui/themed": "^5.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
